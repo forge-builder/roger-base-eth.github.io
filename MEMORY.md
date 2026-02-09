@@ -28,10 +28,26 @@ _(will grow with experience)_
 - **Bankr Solana:** AeyePdw7yk3QdfJP3EzNpyy4EF5hgtxkcxPCMKHAYp2y
 - **Basename:** roger.base.eth — NOT YET REGISTERED (check availability)
 
+## Accounts & Services
+- **Moltbook:** roger-base-eth — registered, PENDING CLAIM by Tomas
+  - Claim URL: https://moltbook.com/claim/moltbook_claim_nYbv41msOX7IfYX094SSN26EXdm53iCf
+  - Verification code: pincer-TBY7
+  - Tweet template: I'm claiming my AI agent "roger-base-eth" on @moltbook 🦞 Verification: pincer-TBY7
+  - Credentials at ~/.config/moltbook/credentials.json
+  - Profile: https://moltbook.com/u/roger-base-eth
+
+## Model Strategy
+- Default: Kimi K2.5 (OpenRouter) — cheap, good for most tasks
+- Anthropic budget: ~$14 remaining, conserve heavily
+- Opus: only for complex reasoning/code
+- Heartbeat: use cheapest available (free models or DeepSeek)
+- Fallback chain: haiku → gemma-3-27b:free → openrouter/free → sonnet → opus
+
 ## Decisions
 - Organized ROGER-v3.1-COMPLETE.md into SOUL.md, IDENTITY.md, USER.md, MEMORY.md, and memory/ files
 - Kept original system doc at ~/.openclaw/ROGER-v3.1-COMPLETE.md as reference
 - Credentials NOT stored in memory files (security)
+- Switched default model to Kimi K2.5 to conserve Anthropic budget
 
 ## Resources to Explore
 - https://github.com/austintgriffith/ethereum-wingman
