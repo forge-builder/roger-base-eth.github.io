@@ -21,6 +21,19 @@
 ## Lessons Learned
 _(will grow with experience)_
 
+## Accounts & Wallets
+- **X/Twitter:** @roger_base_eth (Roger 🟦) — bird CLI via Chrome cookies
+- **Email:** forge.base.eth@gmail.com (general registration email)
+- **Bankr EVM:** 0x984d6741e2c6559b1e655b6dbb3a38662fe2c123 (Base, ETH, Polygon, Unichain)
+- **Bankr Solana:** AeyePdw7yk3QdfJP3EzNpyy4EF5hgtxkcxPCMKHAYp2y
+- **Basename:** roger.base.eth — NOT YET REGISTERED (check availability)
+
 ## Decisions
 - Organized ROGER-v3.1-COMPLETE.md into SOUL.md, IDENTITY.md, USER.md, MEMORY.md, and memory/ files
 - Kept original system doc at ~/.openclaw/ROGER-v3.1-COMPLETE.md as reference
+- Credentials NOT stored in memory files (security)
+
+## Resources to Explore
+- https://github.com/austintgriffith/ethereum-wingman
+- https://docs.cdp.coinbase.com/agent-kit/welcome
+- https://github.com/base/agent-apps-experimental
