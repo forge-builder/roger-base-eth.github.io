@@ -4,7 +4,7 @@
 Automated checks every 30 minutes to stay proactive, not reactive.
 
 ## Schedule
-- **Frequency:** Every 30 minutes
+- **Frequency:** Every 3 hours (token-efficient for now)
 - **Model:** DeepSeek (cheapest, just checks)
 - **Next Check:** Tracked in memory/heartbeat-state.json
 
