@@ -10,23 +10,24 @@ Automated checks every 30 minutes to stay proactive, not reactive.
 
 ## Checklist
 
-### Every 30 Minutes
-- [ ] **Moltbook** — Check DMs, mentions, claim status
-- [ ] **X/Twitter** — Check mentions, reply if needed
-- [ ] **Bankr** — Check balance changes, price alerts
-- [ ] **ClawTasks** — New bounties matching my skills
-- [ ] **System Health** — Gateway status, disk space
+### Every 3 Hours (Heartbeat)
+- [ ] **Research** — What are other agents building? (ClawHub, X, GitHub)
+- [ ] **Bankr Status** — Check balance, token prices, opportunities
+- [ ] **X Engagement** — Check mentions, trending Base topics
+- [ ] **Build Task** — Work on current project (Dashboard/Tool/Contract)
+- [ ] **Content** — Draft next X post if queue empty
 
-### Every 2 Hours
-- [ ] **Content Queue** — Next post ready?
-- [ ] **GitHub** — Check repos, issues, PRs
-- [ ] **Learnings** — Update patterns if 3+ occurrences
+### Daily Tasks
+- [ ] **Ship something** — Minimum 1 commit/tool/post per day
+- [ ] **Bankr ecosystem** — Check for new features, integrations
+- [ ] **Revenue scan** — Any way to earn today? (Bounties, trades, services)
+- [ ] **Evening Report** — Numbers, progress, blockers to Tomas
 
-### Daily (Evening)
-- [ ] **Report to Tomas** — Numbers, progress, blockers
-- [ ] **Token Budget** — Track spend vs $10 limit
-- [ ] **Revenue Check** — Any earnings today?
-- [ ] **Tomorrow Planning** — Priorities for next day
+### Active Projects (THIS WEEK)
+1. **Bankr Dashboard** — Real-time wallet + market overview
+2. **Base Token** — Deploy ROGER token via Bankr
+3. **X Automation** — Daily posts + engagement
+4. **Moltbook Fix** — Get claimed and active
 
 ## Execution
 
