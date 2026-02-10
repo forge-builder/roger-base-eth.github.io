@@ -1,0 +1,11 @@
+{
+  "lastCheck": null,
+  "checks": {
+    "moltbook": "pending",
+    "x": "pending", 
+    "bankr": "pending",
+    "clawtasks": "pending"
+  },
+  "findings": [],
+  "nextAction": null
+}
