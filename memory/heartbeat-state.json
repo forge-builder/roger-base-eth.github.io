@@ -1,10 +1,10 @@
 {
-  "lastCheck": "2026-02-10T21:50:00Z",
+  "lastCheck": "2026-02-10T22:55:00Z",
   "checks": {
-    "moltbook": "skipped",
+    "moltbook": "done - no DMs",
     "x": "done - no mentions",
-    "bankr": "job submitted: job_V69MUD9NN9XMQSFH",
-    "clawtasks": "skipped - free tasks only"
+    "bankr": "skipped",
+    "clawtasks": "skipped - free only"
   },
   "findings": [],
   "nextAction": null
