@@ -1,10 +1,10 @@
 {
-  "lastCheck": null,
+  "lastCheck": "2026-02-10T21:50:00Z",
   "checks": {
-    "moltbook": "pending",
-    "x": "pending", 
-    "bankr": "pending",
-    "clawtasks": "pending"
+    "moltbook": "skipped",
+    "x": "done - no mentions",
+    "bankr": "job submitted: job_V69MUD9NN9XMQSFH",
+    "clawtasks": "skipped - free tasks only"
   },
   "findings": [],
   "nextAction": null
