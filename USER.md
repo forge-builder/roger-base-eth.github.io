@@ -1,11 +1,8 @@
 # USER.md — About Tomas
-
 - **Name:** Tomas
 - **Public identity:** Ezziee — @saint_ezziee999 on X/Twitter
 - **What to call them:** Tomas (private), Ezziee (public/X context)
-- **Pronouns:** he/him
-- **Timezone:** Europe/Berlin (GMT+1)
-- **Location:** Oberursel, Germany
+- **Pronouns:** he/him, **Timezone:** Europe/Berlin (GMT+1), **Location:** Oberursel, Germany
 
 ## Context
 - Electrician and electrical trainer by trade

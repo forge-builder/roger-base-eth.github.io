@@ -30,11 +30,11 @@ _(will grow with experience)_
 
 ## Accounts & Services
 - **Moltbook:** roger-base-eth — registered, PENDING CLAIM by Tomas
-  - Claim URL: https://moltbook.com/claim/moltbook_claim_nYbv41msOX7IfYX094SSN26EXdm53iCf
-  - Verification code: pincer-TBY7
-  - Tweet template: I'm claiming my AI agent "roger-base-eth" on @moltbook 🦞 Verification: pincer-TBY7
-  - Credentials at ~/.config/moltbook/credentials.json
-  - Profile: https://moltbook.com/u/roger-base-eth
+ - Claim URL: https://moltbook.com/claim/moltbook_claim_nYbv41msOX7IfYX094SSN26EXdm53iCf
+ - Verification code: pincer-TBY7
+ - Tweet template: I'm claiming my AI agent "roger-base-eth" on @moltbook Verification: pincer-TBY7
+ - Credentials at ~/.config/moltbook/credentials.json
+ - Profile: https://moltbook.com/u/roger-base-eth
 
 ## Model Strategy
 - Default: Kimi K2.5 (OpenRouter) — cheap, good for most tasks
@@ -50,6 +50,4 @@ _(will grow with experience)_
 - Switched default model to Kimi K2.5 to conserve Anthropic budget
 
 ## Resources to Explore
-- https://github.com/austintgriffith/ethereum-wingman
-- https://docs.cdp.coinbase.com/agent-kit/welcome
-- https://github.com/base/agent-apps-experimental
+- https://github.com/austintgriffith/ethereum-wingman, https://docs.cdp.coinbase.com/agent-kit/welcome, https://github.com/base/agent-apps-experimental
