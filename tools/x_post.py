@@ -1,37 +1,44 @@
 #!/usr/bin/env python3
 """
-Roger's X Posting System
-Browser automation with human-like behavior
+Roger's X Posting System — Mit Login-Unterstützung
 """
 
 import asyncio
 import random
 import json
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 from playwright.async_api import async_playwright
 
-# Config
 USER_DATA_DIR = Path.home() / ".openclaw" / "browser" / "x-session"
 SCREENSHOTS_DIR = Path.home() / ".openclaw" / "workspace" / "logs" / "screenshots"
 LOG_FILE = Path.home() / ".openclaw" / "workspace" / "logs" / "posts.jsonl"
 
-# Ensure dirs exist
 SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
 LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 
+async def check_logged_in(page):
+    """Check if we're logged into X"""
+    try:
+        await page.goto("https://x.com/home", wait_until="domcontentloaded", timeout=10000)
+        await asyncio.sleep(2)
+        # Check for home timeline indicator
+        return await page.query_selector("[data-testid='primaryColumn']") is not None
+    except:
+        return False
+
 async def type_like_human(page, selector, text):
-    """Type text with variable human-like speed"""
+    """Type text with human-like speed"""
     await page.click(selector)
     await asyncio.sleep(random.uniform(0.1, 0.3))
-    
     for char in text:
         await page.type(selector, char, delay=random.randint(50, 150))
         await asyncio.sleep(random.uniform(0.01, 0.05))
 
-async def post_to_x(text: str) -> dict:
-    """Post to X with human-like behavior"""
+async def post_to_x(text: str, interactive=False) -> dict:
+    """Post to X"""
     result = {
         "timestamp": datetime.now().isoformat(),
         "text": text,
@@ -42,87 +49,95 @@ async def post_to_x(text: str) -> dict:
     }
     
     async with async_playwright() as p:
-        # Launch browser with persistent context
         browser = await p.chromium.launch_persistent_context(
             user_data_dir=str(USER_DATA_DIR),
-            headless=False,  # Visible for debugging
+            headless=False,
             args=['--disable-blink-features=AutomationControlled']
         )
         
         page = await browser.new_page()
         
         try:
-            # Navigate to X compose
-            print("🌐 Opening X...")
-            await page.goto("https://x.com/compose/post", wait_until="networkidle")
-            await asyncio.sleep(random.uniform(2, 5))  # Human wait
-            
             # Check if logged in
-            if "login" in page.url or await page.query_selector("input[name='text']") is None:
-                # Try main page first
-                await page.goto("https://x.com", wait_until="networkidle")
-                await asyncio.sleep(3)
-                
-                # Look for compose button
-                compose_btn = await page.query_selector("[data-testid='SideNav_NewTweet_Button']")
-                if compose_btn:
-                    await compose_btn.click()
-                    await asyncio.sleep(random.uniform(2, 4))
+            print("🔐 Checking login status...")
+            is_logged_in = await check_logged_in(page)
             
-            # Find text input
-            print("📝 Typing post...")
+            if not is_logged_in:
+                if interactive:
+                    print("\n" + "="*60)
+                    print("⚠️  NICHT EINGELOGGT")
+                    print("="*60)
+                    print("Bitte im Browser einloggen:")
+                    print("1. X.com öffnen (ist bereits geöffnet)")
+                    print("2. Mit forge.base.eth@gmail.com einloggen")
+                    print("3. Dann hier ENTER drücken")
+                    print("="*60)
+                    input("\nEnter wenn eingeloggt...")
+                    
+                    # Re-check
+                    is_logged_in = await check_logged_in(page)
+                    if not is_logged_in:
+                        raise Exception("Noch nicht eingeloggt")
+                else:
+                    raise Exception("Nicht eingeloggt. Starte mit --login flag")
+            
+            print("✅ Eingeloggt! Öffne Composer...")
+            
+            # Navigate to compose
+            await page.goto("https://x.com/compose/post", wait_until="domcontentloaded")
+            await asyncio.sleep(random.uniform(3, 5))
+            
+            # Find and fill text input
+            print("📝 Schreibe Post...")
             text_input = await page.wait_for_selector(
-                "[data-testid='tweetTextarea_0'], div[role='textbox']",
+                "div[role='textbox']", 
                 timeout=10000
             )
             
-            if not text_input:
-                raise Exception("Could not find text input field")
-            
-            # Type with human-like delays
-            await type_like_human(page, "[data-testid='tweetTextarea_0'], div[role='textbox']", text)
+            await type_like_human(page, "div[role='textbox']", text)
             await asyncio.sleep(random.uniform(1, 3))
             
-            # Click post button
-            print("🚀 Clicking Post...")
+            # Click post
+            print("🚀 Klicke Post...")
             post_btn = await page.wait_for_selector(
-                "[data-testid='tweetButton'], button[type='submit']",
-                timeout=5000
+                "button:has-text('Post')",
+                timeout=10000
             )
             await post_btn.click()
             
-            # Wait for confirmation
-            await asyncio.sleep(random.uniform(3, 5))
+            # Wait and verify
+            await asyncio.sleep(random.uniform(4, 6))
             
-            # Verify (check if we're on the profile or see confirmation)
             current_url = page.url
-            if "/status/" in current_url or await page.query_selector("[data-testid='toast']"):
+            if "/status/" in current_url:
                 result["status"] = "success"
-                result["url"] = current_url if "/status/" in current_url else None
-                print(f"✅ Posted successfully!")
+                result["url"] = current_url
+                print(f"✅ ERFOLG! {current_url}")
             else:
-                # Take screenshot for verification
-                screenshot_path = SCREENSHOTS_DIR / f"post_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
-                await page.screenshot(path=str(screenshot_path))
-                result["screenshot"] = str(screenshot_path)
-                print(f"📸 Screenshot saved: {screenshot_path}")
-                
+                # Check for success toast
+                toast = await page.query_selector("[data-testid='toast']")
+                if toast:
+                    result["status"] = "success"
+                    print("✅ ERFOLG (Toast bestätigt)")
+                else:
+                    raise Exception("Konnte Erfolg nicht verifizieren")
+                    
         except Exception as e:
             result["errors"].append(str(e))
-            print(f"❌ Error: {e}")
+            print(f"❌ FEHLER: {e}")
             
-            # Screenshot on error
+            # Screenshot
             try:
                 screenshot_path = SCREENSHOTS_DIR / f"error_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
                 await page.screenshot(path=str(screenshot_path))
                 result["screenshot"] = str(screenshot_path)
+                print(f"📸 Screenshot: {screenshot_path}")
             except:
                 pass
         
         finally:
             await browser.close()
             
-            # Log result
             with open(LOG_FILE, "a") as f:
                 f.write(json.dumps(result) + "\n")
         
@@ -130,17 +145,13 @@ async def post_to_x(text: str) -> dict:
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python3 x_post.py 'Your tweet text'")
+        print("Usage: python3 x_post.py 'Tweet text' [--login]")
         sys.exit(1)
     
     tweet_text = sys.argv[1]
-    print(f"🟦 Roger posting to X: {tweet_text[:50]}...")
+    interactive = "--login" in sys.argv
     
-    result = asyncio.run(post_to_x(tweet_text))
+    print(f"🟦 Roger X-Posting: {tweet_text[:50]}...")
+    result = asyncio.run(post_to_x(tweet_text, interactive))
     
-    if result["status"] == "success":
-        print(f"\n✅ SUCCESS!")
-        print(f"🔗 URL: {result.get('url', 'N/A')}")
-    else:
-        print(f"\n❌ FAILED")
-        print(f"Errors: {result['errors']}")
+    sys.exit(0 if result["status"] == "success" else 1)
