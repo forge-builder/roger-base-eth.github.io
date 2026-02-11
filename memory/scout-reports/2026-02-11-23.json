@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-02-11T23:21:00Z",
+  "type": "scout_report",
+  "status": "limited",
+  "note": "Exec tool unavailable - full automation blocked",
+  "findings": [
+    {
+      "source": "system",
+      "message": "Cannot execute full scout - system repair needed"
+    }
+  ],
+  "action": "Report user: System requires maintenance"
+}
