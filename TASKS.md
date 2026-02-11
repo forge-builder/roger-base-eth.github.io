@@ -6,6 +6,7 @@ Updated: 2026-02-11 10:25 CET
 - [x] Install Pinecone Python client
 - [x] Build ContextKeeper prototype v0.1
 - [x] Test save/retrieve context
+- [x] Draft Base smart contract
 - [ ] Create Pinecone account (free tier) - needs your API key
 - [ ] Connect to real Pinecone (vs mock mode)
 
