@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Launcher 🟦 — Create Tokens on Base</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --base-blue: #0052FF;
+            --base-dark: #0A0B0D;
+            --base-card: #141519;
+            --base-border: #1E2025;
+            --base-text: #F0F0F0;
+            --base-muted: #8A8F98;
+            --base-green: #00D395;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--base-dark);
+            color: var(--base-text);
+            min-height: 100vh;
+            padding: 40px 24px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: var(--base-muted);
+            font-size: 14px;
+        }
+
+        .card {
+            background: var(--base-card);
+            border: 1px solid var(--base-border);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            color: var(--base-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--base-border);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: var(--base-text);
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--base-blue);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 16px;
+        }
+
+        .btn {
+            width: 100%;
+            background: var(--base-blue);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .info-box {
+            background: rgba(0, 211, 149, 0.1);
+            border: 1px solid rgba(0, 211, 149, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 13px;
+            color: var(--base-green);
+            margin-bottom: 16px;
+        }
+
+        .preview {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 20px;
+        }
+
+        .preview-title {
+            font-size: 12px;
+            color: var(--base-muted);
+            margin-bottom: 8px;
+        }
+
+        .preview-content {
+            font-family: 'SF Mono', monospace;
+            font-size: 12px;
+            color: var(--base-text);
+            word-break: break-all;
+        }
+
+        .cost {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--base-border);
+            font-size: 14px;
+        }
+
+        .cost:last-child {
+            border-bottom: none;
+        }
+
+        .cost-label {
+            color: var(--base-muted);
+        }
+
+        .cost-value {
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--base-muted);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🟦 Token Launcher</h1>
+            <p>Create ERC-20 tokens on Base in seconds</p>
+        </div>
+
+        <div class="info-box">
+            ✓ No code required • Instant deployment • Full ownership
+        </div>
+
+        <div class="card">
+            <div class="form-group">
+                <label>Token Name</label>
+                <input type="text" id="tokenName" placeholder="MyToken" maxlength="32">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Symbol</label>
+                    <input type="text" id="tokenSymbol" placeholder="MTK" maxlength="6">
+                </div>
+                <div class="form-group">
+                    <label>Decimals</label>
+                    <input type="number" id="tokenDecimals" value="18" min="0" max="18">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Initial Supply</label>
+                <input type="number" id="tokenSupply" placeholder="1000000" min="1">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cost">
+                <span class="cost-label">Network Fee</span>
+                <span class="cost-value">~$0.01</span>
+            </div>
+            <div class="cost">
+                <span class="cost-label">Contract Deployment</span>
+                <span class="cost-value">~$0.50</span>
+            </div>
+            <div class="cost">
+                <span class="cost-label">Total Cost</span>
+                <span class="cost-value" style="color: var(--base-green);">~$0.51</span>
+            </div>
+        </div>
+
+        <button class="btn" onclick="generateContract()">
+            Create Token
+        </button>
+
+        <div class="preview" id="preview" style="display: none;">
+            <div class="preview-title">Generated Contract</div>
+            <div class="preview-content" id="previewContent"></div>
+        </div>
+    </div>
+
+    <footer>
+        Powered by Roger 🟦 • Built on Base
+    </footer>
+
+    <script>
+        function generateContract() {
+            const name = document.getElementById('tokenName').value || 'MyToken';
+            const symbol = document.getElementById('tokenSymbol').value || 'MTK';
+            const decimals = document.getElementById('tokenDecimals').value || 18;
+            const supply = document.getElementById('tokenSupply').value || 1000000;
+
+            const contract = `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract ${name.replace(/\s/g, '')}Token is ERC20, Ownable {
+    
+    constructor() ERC20("${name}", "${symbol}") {
+        _mint(msg.sender, ${supply} * 10**${decimals});
+    }
+    
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
+    }
+}`;
+
+            document.getElementById('preview').style.display = 'block';
+            document.getElementById('previewContent').textContent = contract;
+        }
+    </script>
+</body>
+</html>
