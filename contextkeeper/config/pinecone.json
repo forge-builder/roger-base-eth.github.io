@@ -1,0 +1,12 @@
+{
+  "pinecone": {
+    "api_key": "YOUR_API_KEY_HERE",
+    "environment": "us-east-1",
+    "index_name": "contextkeeper",
+    "dimension": 384,
+    "metric": "cosine",
+    "pod_type": "p1.x1"
+  },
+  "setup_date": "2026-02-11T12:08:00.009864",
+  "status": "pending_api_key"
+}
