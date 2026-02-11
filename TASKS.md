@@ -3,16 +3,17 @@ Updated: 2026-02-11 10:25 CET
 
 ## URGENT (Do First)
 - [x] Research Vector DB for ContextKeeper
-- [ ] Create Pinecone account (free tier)
-- [ ] Install Pinecone Python client
-- [ ] Build ContextKeeper prototype v0.1
-- [ ] Test save/retrieve context
+- [x] Install Pinecone Python client
+- [x] Build ContextKeeper prototype v0.1
+- [x] Test save/retrieve context
+- [ ] Create Pinecone account (free tier) - needs your API key
+- [ ] Connect to real Pinecone (vs mock mode)
 
 ## HIGH (This Week)
-- [ ] X Profile: Update bio (international English)
-- [ ] X Profile: Upload avatar (lobster image)
-- [ ] X Profile: Add website link (when deployed)
-- [ ] Deploy website to GitHub Pages
+- [ ] X Profile: Update bio (international English) - BLOCKED: needs X login
+- [ ] X Profile: Upload avatar (lobster image) - BLOCKED: needs X login
+- [ ] X Profile: Add website link (when deployed) - BLOCKED: needs X login
+- [x] Deploy website to GitHub Pages
 - [ ] Write first X post about ContextKeeper
 
 ## MEDIUM (Ongoing)
