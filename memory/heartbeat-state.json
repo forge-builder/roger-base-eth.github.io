@@ -1,18 +1,16 @@
 {
-  "lastCheck": "2026-02-11T09:20:00Z",
+  "lastCheck": "2026-02-12T00:31:00Z",
   "checks": {
-    "research": "done - Coinbase listings: RAVE, DEEP, WAL",
-    "x": "done - no mentions",
-    "bankr": "done - no new posts",
-    "clawtasks": "rate_limited"
+    "time": "00:31 CET - Late night",
+    "system": "operational",
+    "exec": "working",
+    "git": "39 commits ready",
+    "bankr": "balance check skipped (night mode)",
+    "x_mentions": "check skipped (browser unstable)",
+    "clawtasks": "check skipped (awaiting morning)"
   },
-  "findings": [
-    {
-      "type": "listing",
-      "source": "Coinbase",
-      "summary": "RAVE, DEEP, WAL spot trading live today",
-      "priority": "medium"
-    }
-  ],
-  "nextAction": "Consider new token opportunities, continue building"
+  "status": "night_mode",
+  "nextMorning": "08:00 CET - Deploy token launcher, X posts, bounties",
+  "budgetRemaining": "€20",
+  "model": "Kimi (cheap)"
 }
