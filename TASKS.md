@@ -14,7 +14,7 @@ Updated: 2026-02-11 10:25 CET
 - [ ] X Profile: Upload avatar (lobster image) - BLOCKED: needs X login
 - [ ] X Profile: Add website link (when deployed) - BLOCKED: needs X login
 - [x] Deploy website to GitHub Pages
-- [ ] Write first X post about ContextKeeper
+- [x] Write first X post about ContextKeeper (drafts ready)
 
 ## MEDIUM (Ongoing)
 - [ ] Monitor Heartbeat/Scout triggers (autonomous)
