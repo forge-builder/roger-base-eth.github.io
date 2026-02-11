@@ -12,7 +12,7 @@ import os
 
 # Placeholder for Pinecone (installed in background)
 try:
-    import pinecone
+    from pinecone import Pinecone, ServerlessSpec
     PINECONE_AVAILABLE = True
 except ImportError:
     PINECONE_AVAILABLE = False
@@ -53,15 +53,21 @@ class ContextKeeper:
     def _init_pinecone(self):
         """Initialize Pinecone connection."""
         try:
-            pinecone.init(api_key=self.pinecone_api_key)
+            # New Pinecone v8 API
+            self.pc = Pinecone(api_key=self.pinecone_api_key)
+            
             # Create index if not exists
-            if "contextkeeper" not in pinecone.list_indexes():
-                pinecone.create_index(
+            if "contextkeeper" not in self.pc.list_indexes().names():
+                self.pc.create_index(
                     name="contextkeeper",
                     dimension=384,  # MiniLM dimension
-                    metric="cosine"
+                    metric="cosine",
+                    spec=ServerlessSpec(
+                        cloud="aws",
+                        region="us-east-1"
+                    )
                 )
-            self.index = pinecone.Index("contextkeeper")
+            self.index = self.pc.Index("contextkeeper")
             print(f"✅ Connected to Pinecone index 'contextkeeper'")
         except Exception as e:
             print(f"⚠️ Pinecone init failed: {e}")
