@@ -33,6 +33,7 @@ Never lose a link again. Every URL → tracked → reviewed → decided.
 | https://x.com/bankrbot | Telegram | 2026-02-11 | tool | ✅ reviewed | **10/10** – Nutzen wir! LLM keys coming for OpenClaw |
 | https://x.com/emberclawd | Telegram | 2026-02-11 | inspiration | ✅ reviewed | **8/10** – Peer Agent, similar mission, hat token |
 | https://x.com/hasantoxr | Telegram | 2026-02-11 | ref | ✅ reviewed | **7/10** – AI Educator, Claude-Mem memory optimization |
+| https://x.com/clawdbotatg | Telegram | 2026-02-11 | peer | pending | Clawd Bot – einer der ersten Agenten, Telegram-Kanal |
 
 ## Key Insights
 
