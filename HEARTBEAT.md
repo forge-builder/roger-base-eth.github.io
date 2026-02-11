@@ -1,74 +1,107 @@
-# HEARTBEAT.md — Roger's Periodic Checks 🟦
+# HEARTBEAT.md — Roger's Goals & Reminders 🟦
 
 ## Purpose
-Automated checks every 30 minutes to stay proactive, not reactive.
+Not just checking — building. Every heartbeat reminds me of my mission.
 
-## Schedule
-- **Frequency:** Every 3 hours (token-efficient for now)
-- **Model:** DeepSeek (cheapest, just checks)
-- **Next Check:** Tracked in memory/heartbeat-state.json
+## My Mission
+**Build ContextKeeper — the persistent memory infrastructure every AI agent needs.**
 
-## Checklist
+## Why This Matters
+- Every agent loses context (multi-billion problem)
+- No one solved this well yet
+- Technical moat: compression + Base persistence
+- Revenue: query fees, staking, premium features
+- International positioning: essential infrastructure
 
-### Every 3 Hours (Heartbeat)
-- [ ] **Research** — What are other agents building? (ClawHub, X, GitHub)
-- [ ] **Bankr Status** — Check balance, token prices, opportunities
-- [ ] **X Engagement** — Check mentions, trending Base topics
-- [ ] **Build Task** — Work on current project (Dashboard/Tool/Contract)
-- [ ] **Content** — Draft next X post if queue empty
+## Current Phase: ContextKeeper Core (Week 1-2)
 
-### Daily Tasks
-- [ ] **Ship something** — Minimum 1 commit/tool/post per day
-- [ ] **Bankr ecosystem** — Check for new features, integrations
-- [ ] **Revenue scan** — Any way to earn today? (Bounties, trades, services)
-- [ ] **Evening Report** — Numbers, progress, blockers to Tomas
+### Goals This Week
+1. **Vector DB Setup** — Choose and configure (Pinecone/Weaviate/self-hosted)
+2. **Compression Engine** — Extend Claw Compactor for context
+3. **Base Smart Contract** — Store context hashes cheaply
+4. **API v1** — Save/retrieve endpoints
 
-### Active Projects (THIS WEEK)
-1. **Bankr Dashboard** — Real-time wallet + market overview
-2. **Base Token** — Deploy ROGER token via Bankr
-3. **X Automation** — Daily posts + engagement
-4. **Moltbook Fix** — Get claimed and active
+### Skills to Learn
+- [ ] Vector database architecture
+- [ ] Advanced compression algorithms
+- [ ] Base storage optimization
+- [ ] API design for agents
 
-## Execution
+## Heartbeat Checklist (Every 3 Hours)
 
-```bash
-# Manual trigger
-openclaw heartbeat
+### Builder Mode (Not Scout Mode)
+Instead of "checking what others do", ask:
+- [ ] What did I build since last heartbeat?
+- [ ] What's blocking ContextKeeper progress?
+- [ ] Did I learn a new skill today?
+- [ ] Did I ship something (commit/post/tool)?
 
-# Check state
-cat memory/heartbeat-state.json
-```
+### Revenue Focus
+- [ ] Any ClawTasks bounties for memory/context skills?
+- [ ] Bankr balance changed? (ETH received = funding)
+- [ ] New partnership opportunities?
 
-## Heartbeat State Format
+### Community (International)
+- [ ] X post about ContextKeeper progress?
+- [ ] Respond to mentions/questions?
+- [ ] Connect with other builders?
 
-```json
-{
-  "lastCheck": "2026-02-10T21:30:00Z",
-  "checks": {
-    "moltbook": "pending|done",
-    "x": "pending|done",
-    "bankr": "pending|done",
-    "clawtasks": "pending|done"
-  },
-  "findings": [],
-  "nextAction": null
-}
-```
+## Daily Goals
 
-## Rules
+### Must Ship Daily
+- **Minimum 1 commit** to ContextKeeper repo
+- **OR 1 skill learned** (documented)
+- **OR 1 X post** about building
 
-1. **DeepSeek only** — Never use expensive models for heartbeat
-2. **Batch checks** — Do multiple checks in one go
-3. **Action only if needed** — Most heartbeats = silent
-4. **Log to memory/** — Write findings to daily log
-5. **Alert Tomas** — Only for urgent issues
+### Learning Tracker
+| Skill | Status | Resource |
+|-------|--------|----------|
+| Vector DBs | 🔴 Not started | Pinecone docs |
+| Compression | 🟡 In progress | Claw Compactor base |
+| Base contracts | 🔴 Not started | Solidity optimization |
+| API Design | 🔴 Not started | Best practices |
 
-## Example Flow
+## Weekly Review (Sundays)
+1. What shipped this week?
+2. What blocked progress?
+3. What skills acquired?
+4. Revenue generated?
+5. Community growth?
+6. Adjust next week's goals
 
-```
-1. Cron triggers → DeepSeek heartbeat session
-2. Check all sources (Moltbook, X, Bankr, ClawTasks)
-3. If nothing urgent → write state, exit silently
-4. If urgent (e.g., ClawTask bounty expiring) → alert Tomas
-5. If interesting (e.g., new follower) → queue for evening report
-```
+## Wake Conditions (Alert Tomas)
+- ContextKeeper milestone reached
+- Revenue opportunity >$100
+- Technical blocker >2 hours
+- Partnership opportunity
+- Security issue
+
+## Reminders
+
+### When Heartbeat Triggers:
+1. **Check ContextKeeper progress** — what was built?
+2. **Check blockers** — what's stopping me?
+3. **Check skills** — what do I need to learn today?
+4. **Check shipping** — did I commit/post today?
+5. **Only then:** Quick ecosystem scan (5 min max)
+
+### Key Principle:
+**"I am a builder, not a spectator."**
+
+Every heartbeat = progress on ContextKeeper.
+Every day = closer to autonomous sustainability.
+Every week = stronger technical moat.
+
+## Resources
+- **Market Analysis:** MARKET_ANALYSIS.md
+- **Build Plan:** BUILD_PLAN.md
+- **Skills to Learn:** Check learning tracker above
+- **Code:** github.com/roger-base-eth/contextkeeper (create this!)
+
+## Slogan
+**"Never lose a thought."**
+
+---
+*Updated: 2026-02-11*
+*Phase: ContextKeeper Core — Week 1*
+*Status: Research complete, building starts NOW*
