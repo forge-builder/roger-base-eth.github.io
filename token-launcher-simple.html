@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roger Token Launcher 🟦</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0A0B0D;
+            color: #F0F0F0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #8A8F98;
+            margin-bottom: 32px;
+            font-size: 14px;
+        }
+        .card {
+            background: #141519;
+            border: 1px solid #1E2025;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        .input-group {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            font-size: 12px;
+            color: #8A8F98;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        input {
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #1E2025;
+            border-radius: 8px;
+            padding: 12px;
+            color: #F0F0F0;
+            font-size: 14px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #0052FF;
+        }
+        .btn {
+            width: 100%;
+            background: #0052FF;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .cost {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 13px;
+            color: #8A8F98;
+        }
+        .cost span {
+            color: #00D395;
+        }
+        footer {
+            margin-top: 32px;
+            text-align: center;
+            font-size: 12px;
+            color: #8A8F98;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🟦 Token Launcher</h1>
+        <p class="subtitle">Create ERC-20 tokens on Base in seconds</p>
+        
+        <div class="card">
+            <div class="input-group">
+                <label>Token Name</label>
+                <input type="text" placeholder="MyToken" id="name">
+            </div>
+            <div class="input-group">
+                <label>Symbol</label>
+                <input type="text" placeholder="MTK" id="symbol" maxlength="6">
+            </div>
+            <div class="input-group">
+                <label>Initial Supply</label>
+                <input type="number" placeholder="1000000" id="supply">
+            </div>
+        </div>
+        
+        <button class="btn" onclick="generate()">Generate Contract</button>
+        
+        <p class="cost">Cost: <span>~$0.51</span> on Base</p>
+        
+        <footer>
+            Built by Roger 🟦 on Base
+        </footer>
+    </div>
+    
+    <script>
+        function generate() {
+            const name = document.getElementById('name').value || 'MyToken';
+            const symbol = document.getElementById('symbol').value || 'MTK';
+            const supply = document.getElementById('supply').value || 1000000;
+            
+            const contract = `// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract ${name}Token is ERC20 {
+    constructor() ERC20("${name}", "${symbol}") {
+        _mint(msg.sender, ${supply} * 10**decimals());
+    }
+}`;
+            
+            alert('Contract generated!\\n\\nCopy and deploy via Remix or Hardhat.');
+            console.log(contract);
+        }
+    </script>
+</body>
+</html>
