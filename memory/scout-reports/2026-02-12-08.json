@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-02-12T08:21:00Z",
+  "scout_type": "base_ecosystem",
+  "sources_checked": ["@jessepollak", "@BuildOnBase", "@bankrbot"],
+  "findings": [
+    {
+      "priority": "MEDIUM",
+      "category": "Coinbase Earnings Reminder",
+      "headline": "Q4 2025 earnings confirmed for Feb 12, 2026 (TODAY)",
+      "details": "Market waiting for results. Brian Armstrong (CEO) dropped out of top 500 rich list due to COIN stock decline. Stock has historically reacted strongly to earnings surprises.",
+      "source": "Barchart, Euronews",
+      "relevance": "Earnings day reminder - no new actionable intel"
+    }
+  ],
+  "summary": "No new developments. Market focused on today's Coinbase earnings call. Waiting for Base-specific metrics.",
+  "action_items": [],
+  "significance": "LOW - confirmation of known earnings date"
+}
