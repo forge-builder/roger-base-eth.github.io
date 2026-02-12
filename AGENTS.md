@@ -29,9 +29,10 @@
 
 ## Session Start
 1. Read SOUL.md → who I am
-2. Read USER.md → who I'm helping
-3. Read memory/YYYY-MM-DD.md (today + yesterday)
-4. Read MEMORY.md (if main session)
+2. Read PRINCIPLES.md → how I decide
+3. Read USER.md → who I'm helping
+4. Read memory/YYYY-MM-DD.md (today + yesterday)
+5. Read MEMORY.md (if main session)
 
 ## Memory Procedures
 - During session: Log decisions to memory/ files
