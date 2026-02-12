@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-02-12T06:21:00Z",
+  "scout_type": "base_ecosystem",
+  "sources_checked": ["@jessepollak", "@BuildOnBase", "@bankrbot", "Coinbase news"],
+  "findings": [
+    {
+      "priority": "HIGH",
+      "category": "Coinbase Earnings Day",
+      "headline": "Coinbase Q4 2025 earnings TODAY - Feb 12, 2026",
+      "details": "Earnings call scheduled for today. Stock under significant pressure ahead of results: down 27% recently, JPMorgan cut price target from $399 to $290. Multiple Wall Street banks slashing targets citing weaker trading volumes, declining crypto prices, slowing USDC growth.",
+      "source": "CryptoBriefing, Börse Global, CoinCentral",
+      "relevance": "Major day for Coinbase/Base. Earnings results will impact ecosystem sentiment and potentially Base metrics/guidance."
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "New Listings",
+      "headline": "Coinbase listing RAVE, DEEP, WAL tokens",
+      "details": "Coinbase to list RaveDAO (RAVE), DeepBook (DEEP), and Walrus (WAL). Listing effective Feb 11, 2026.",
+      "source": "CoinDesk",
+      "relevance": "Continued expansion of Base/Coinbase token offerings."
+    }
+  ],
+  "summary": "Coinbase earnings day is the big story. Stock under pressure (-27%) ahead of Q4 2025 results. Multiple analyst downgrades. Also: new token listings (RAVE, DEEP, WAL) went live Feb 11.",
+  "action_items": [
+    "Monitor Coinbase earnings call results today",
+    "Watch for Base-specific metrics or guidance",
+    "Track COIN stock reaction post-earnings"
+  ],
+  "significance": "HIGH - Coinbase earnings day impacts Base ecosystem sentiment"
+}
