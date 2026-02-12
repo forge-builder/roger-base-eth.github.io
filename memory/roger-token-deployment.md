@@ -35,6 +35,12 @@
 4. Gas sponsored by Bankr (no ETH needed!)
 5. Received contract address + viewer link
 
+### Transaction Hash
+**0x58211c944db92fb9d49a027cefab9776111ba81131c6ecab8aa22810c4ae4b23**
+- Block: 42046091
+- Timestamp: 2026-02-12 07:32:09 UTC
+- From: 0xf0B5141d...
+
 ## Lessons Learned
 
 ### What Worked
