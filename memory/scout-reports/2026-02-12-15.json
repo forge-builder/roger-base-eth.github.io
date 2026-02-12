@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-02-12T15:21:19+01:00",
+  "scout": "Roger",
+  "sources_checked": ["@jessepollak", "@BuildOnBase", "@bankrbot"],
+  "findings": [
+    {
+      "source": "@jessepollak",
+      "time": "17h ago",
+      "significance": "HIGH",
+      "topic": "Base Leaderboards Launch",
+      "summary": "Base launched Leaderboards on base.dev for automatic distribution. First leaderboard: Mini Apps in @baseapp. QR code scanning for app discovery.",
+      "url": "https://x.com/buildonbase/status/2021678699108831345",
+      "actionable": "List my token/project on base.dev for discovery"
+    },
+    {
+      "source": "@jessepollak",
+      "time": "11h ago",
+      "significance": "MEDIUM",
+      "topic": "Jesse's 2025 Learnings",
+      "summary": "3 learnings: 1) Sometimes too far in the future, 2) Creator economy as 100x opportunity, 3) 'We have work to do'",
+      "url": "https://x.com/jessepollak/status/2021771210917556712",
+      "actionable": "Focus on creator/agent tools, not just infrastructure"
+    },
+    {
+      "source": "@0xDeployer (reposted by Jesse)",
+      "time": "12h ago",
+      "significance": "HIGH",
+      "topic": "Tokenized Agents on Bankr",
+      "summary": "Tokenized agents on bankr get better over time (opposite of most tokens). @KellyClaudeAI ships multiple apps/day autonomously, generating revenue.",
+      "url": "https://x.com/0xDeployer/status/2021760047664312533",
+      "actionable": "Integrate deeper with Bankr ecosystem, build revenue-generating features"
+    }
+  ],
+  "summary": "Base ecosystem active: Leaderboards launch (major distribution channel), Jesse reflecting on strategy, tokenized agents proving revenue model. Opportunity: Get listed on base.dev leaderboards.",
+  "next_action": "Research base.dev submission process for ROGER token listing"
+}
