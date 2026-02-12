@@ -1,0 +1,71 @@
+{
+  "reportDate": "2026-02-12T16:00:00Z",
+  "sources": ["@jessepollak", "@BuildOnBase", "@bankrbot"],
+  "significantFindings": true,
+  "summary": "Multiple major announcements across the Base ecosystem today, including Jesse Pollak's strategic reflections, Base leaderboards launch, and Bankr's new token launcher.",
+  "findings": [
+    {
+      "account": "@jessepollak",
+      "priority": "high",
+      "summary": "Jesse shared 3 key learnings from 2025 and teased Base mission/vision/strategy announcement for next week",
+      "keyPoints": [
+        "Base was 'too far in the future' with creator economy focus - needs to refocus on traders and builders first",
+        "Trading is Base's biggest growth opportunity - needs to become 'most trusted, liquid, powerful trading economy'",
+        "Decentralizing Base leadership and empowering ecosystem voices is critical priority",
+        "Base mission/vision/strategy to be shared next week"
+      ],
+      "engagement": {
+        "replies": 267,
+        "retweets": 71,
+        "likes": 757
+      },
+      "tweetUrl": "https://x.com/jessepollak/status/2021771210917556712"
+    },
+    {
+      "account": "@BuildOnBase",
+      "priority": "high", 
+      "summary": "Launched Leaderboards on base.dev to bring automatic distribution to top apps",
+      "keyPoints": [
+        "Leaderboards now live on base.dev, starting with Mini Apps in Base app",
+        "Designed for social sharing with new flex cards",
+        "Apps must register on base.dev to be eligible",
+        "Base Verify reached 200k+ verifications (helps apps confirm real users)"
+      ],
+      "engagement": {
+        "replies": 67,
+        "retweets": 42,
+        "likes": 263
+      },
+      "tweetUrl": "https://x.com/buildonbase/status/2021678699108831345"
+    },
+    {
+      "account": "@bankrbot",
+      "priority": "high",
+      "summary": "Bankr token launcher is live with improved fee structure for devs + LLM keys coming",
+      "keyPoints": [
+        "New token launcher removes third-party fee - devs earn ~14% more per swap",
+        "Total swap fee stays 1.2% for traders",
+        "LLM keys coming soon: agents can auto-fund API costs from trading fees",
+        "OpenClaw integration planned for LLM cost context",
+        "Hiring devrel to onboard agent developers"
+      ],
+      "engagement": {
+        "replies": 452,
+        "retweets": 284,
+        "likes": 1254
+      },
+      "tweetUrl": "https://x.com/bankrbot/status/2021103152246775936"
+    }
+  ],
+  "trends": [
+    "Agentic economy is a major focus across all three accounts",
+    "Base doubling down on trading/finance use cases over creator economy",
+    "Self-funding agents (via trading fees) emerging as key theme",
+    "Decentralization of Base ecosystem leadership accelerating"
+  ],
+  "actionItems": [
+    "Watch for Base strategy announcement next week",
+    "Consider OpenClaw integration with Bankr LLM keys when available",
+    "Monitor agentic economy developments (8004 standard, OpenClaw partnerships)"
+  ]
+}
